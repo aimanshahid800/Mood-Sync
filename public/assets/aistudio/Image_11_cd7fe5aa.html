@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MoodSync - Welcome &amp; Auth</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&amp;family=Nunito:wght@400;600;700;800&amp;display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            heather: '#877499',
+            'heather-dark': '#5c4b6e',
+            'heather-soft': '#b3a4c2',
+            viridian: '#679F9F',
+            sandstone: '#E6D4BF',
+            'sandstone-light': '#F5ECE1',
+            'sandstone-deep': '#D4BF9F',
+            candy: '#E78299',
+            'candy-hover': '#dc6e88',
+            'candy-soft': '#fae1e7',
+            azur: '#7D97C9',
+            ivory: '#FFFDF9',
+            warmgray: '#786960'
+          },
+          fontFamily: {
+            quicksand: ['Quicksand', 'sans-serif'],
+            nunito: ['Nunito', 'sans-serif']
+          },
+          boxShadow: {
+            'warm-subtle': '0 4px 20px rgba(110, 85, 65, 0.08)',
+            'warm-card': '0 -8px 30px rgba(120, 92, 70, 0.12), 0 2px 10px rgba(120, 92, 70, 0.05)',
+            'warm-btn': '0 4px 14px rgba(231, 130, 153, 0.35)',
+            'warm-inner': 'inset 0 2px 4px rgba(120, 92, 70, 0.04)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Nunito', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      user-select: none;
+    }
+    h1, h2, h3, .font-heading {
+      font-family: 'Quicksand', sans-serif;
+    }
+    .custom-pill-shadow {
+      box-shadow: 0 2px 8px rgba(120, 92, 70, 0.06);
+    }
+  </style>
+</head>
+<body class="bg-[#E6D4BF] min-h-screen m-0 p-0 text-slate-800">
+
+  <!-- Mobile Device Frame Container (390 x 844 px portrait) -->
+  <main class="w-full min-h-screen max-w-md mx-auto bg-[#E6D4BF] relative overflow-hidden flex flex-col justify-between">
+
+    <!-- Top Status Bar (iOS style) -->
+    <header class="w-full pt-3 px-7 flex justify-between items-center z-20 text-[#5a483a]">
+      <span class="text-[15px] font-bold tracking-tight font-quicksand">9:41</span>
+      <!-- Dynamic Island / Notch Placeholder subtle shape -->
+      <div class="w-24 h-4 bg-[#d8c3a9]/50 rounded-full"></div>
+      <div class="flex items-center space-x-1.5">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L12 22l7.03-4.39C20.26 16.07 21 14.12 21 12c0-4.97-4.03-9-9-9z" opacity="0"></path>
+          <circle cx="4.5" cy="17" r="1.5"></circle>
+          <circle cx="9.5" cy="14" r="1.8"></circle>
+          <circle cx="14.5" cy="11" r="2.1"></circle>
+          <circle cx="19.5" cy="8" r="2.4"></circle>
+        </svg>
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+          <path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98C20.93 5.9 16.69 4 12 4z"></path>
+        </svg>
+        <!-- Battery Icon -->
+        <div class="w-5 h-2.5 border-2 border-[#5a483a] rounded-sm p-0.5 flex items-center">
+          <div class="h-full w-3 bg-[#5a483a] rounded-2xs"></div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Top Decorative Atmosphere (Organic Warm Blobs, No Blur) -->
+    <div class="absolute -top-10 -left-10 w-44 h-44 bg-[#f0e3d2] rounded-full opacity-60 pointer-events-none"></div>
+    <div class="absolute top-24 -right-12 w-36 h-36 bg-[#dfcbaf] rounded-full opacity-50 pointer-events-none"></div>
+    <div class="absolute top-48 left-6 w-3 h-3 bg-candy/40 rounded-full pointer-events-none"></div>
+    <div class="absolute top-16 right-20 w-2.5 h-2.5 bg-heather/30 rounded-full pointer-events-none"></div>
+
+    <!-- TOP HALF: Illustration & Gentle Warm Brand Presence -->
+    <section class="relative z-10 flex-1 flex flex-col items-center justify-center px-6 pt-1 pb-3">
+      <!-- Mini Brand Pill Indicator -->
+      <div class="flex items-center gap-1.5 bg-ivory/80 px-3 py-1 rounded-full text-xs font-semibold text-heather-dark mb-2 custom-pill-shadow">
+        <span class="w-2 h-2 rounded-full bg-candy animate-pulse"></span>
+        <span class="font-quicksand tracking-wide uppercase text-[10px]">Gentle Daily Start</span>
+      </div>
+
+      <!-- Warm Human-Style Illustration Container -->
+      <div class="w-full max-w-[290px] h-[195px] relative rounded-2xl overflow-hidden shadow-warm-subtle border-2 border-white/60 bg-sandstone-light flex items-center justify-center">
+        <img src="https://lh3.googleusercontent.com/aida-public/AB6AXuCqKO8M-04TnCQ_7lnHs4pgAslnMutnHo5INBCZY09yLXV2grwlOqHM_QO4-0YPvLqdFBmDFHtEw8hLvWeVbB_I1lby136C6RUm-LBrRpuKIzIUBmE13vQOhyDXwPerVW5cvvzfWmqZsR4Nmjz2IUa7hkuXdM9u6kgBKq4TNfAaqqJmFrEynsOwX4TMSrY_pTG5D81btJu2QhsFMxNwhc8jqIf9OH2gIPFdRhKZ-B1U7O6JIqHr7smp" alt="Person stretching and gently waking up in cozy bed" class="w-full h-full object-cover object-center">
+      </div>
+
+      <!-- Welcoming Warm Tagline -->
+      <div class="text-center mt-2.5">
+        <h1 class="text-xl font-bold font-quicksand text-[#4b3c32] tracking-tight">
+          Welcome to <span class="text-heather-dark">MoodSync</span>
+        </h1>
+        <p class="text-[12px] font-medium text-[#7a6557] mt-0.5">
+          Tune your day to your rhythm, gently &amp; unhurried.
+        </p>
+      </div>
+    </section>
+
+    <!-- BOTTOM HALF: Solid Ivory / Warm Cream Rounded Card (No Glass/Blur) -->
+    <section class="relative z-10 w-full bg-ivory rounded-t-[36px] shadow-warm-card border-t border-[#f2e6d6] px-6 pt-5 pb-6 flex flex-col">
+      
+      <!-- Tactile Card Handle Indicator -->
+      <div class="w-10 h-1 bg-[#decbba] rounded-full mx-auto mb-4"></div>
+
+      <!-- Segmented Toggle: Login / Signup (Solid tactile pills) -->
+      <div class="w-full bg-sandstone-light p-1 rounded-full flex items-center mb-4 custom-pill-shadow" role="tablist">
+        <button id="tab-login" onclick="toggleTab('login')" class="flex-1 py-2 rounded-full text-center text-xs font-bold font-quicksand transition-all duration-200 bg-ivory text-heather-dark shadow-sm" role="tab" aria-selected="true">
+          Log In
+        </button>
+        <button id="tab-signup" onclick="toggleTab('signup')" class="flex-1 py-2 rounded-full text-center text-xs font-bold font-quicksand transition-all duration-200 text-warmgray hover:text-heather-dark" role="tab" aria-selected="false">
+          Sign Up
+        </button>
+      </div>
+
+      <!-- Form Inputs Container -->
+      <form class="space-y-2.5 mb-4" onsubmit="event.preventDefault();">
+        <!-- Input: Email -->
+        <div>
+          <label class="block text-[11px] font-bold font-quicksand text-[#655345] mb-1 ml-3">
+            Email address
+          </label>
+          <div class="relative flex items-center">
+            <div class="absolute left-3.5 text-heather">
+              <!-- Cozy Envelope Icon -->
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"></path>
+              </svg>
+            </div>
+            <input type="email" placeholder="maya@mindfulday.com" value="maya@mindfulday.com" class="w-full bg-[#FAF5EE] text-[#4b3c32] text-xs font-medium pl-10 pr-4 py-2.5 rounded-full border border-[#E8DECة border-[#decbba]] focus:outline-none focus:border-candy focus:ring-2 focus:ring-candy-soft transition-all shadow-warm-inner placeholder-[#ab9a8e]">
+          </div>
+        </div>
+
+        <!-- Input: Password -->
+        <div>
+          <div class="flex justify-between items-center mb-1 px-3">
+            <label class="text-[11px] font-bold font-quicksand text-[#655345]">
+              Password
+            </label>
+            <a href="#" class="text-[10px] font-semibold text-heather hover:text-heather-dark hover:underline">
+              Forgot?
+            </a>
+          </div>
+          <div class="relative flex items-center">
+            <div class="absolute left-3.5 text-heather">
+              <!-- Cozy Lock Keyhole Icon -->
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"></path>
+              </svg>
+            </div>
+            <input type="password" placeholder="••••••••••••" value="cozyflow2025" class="w-full bg-[#FAF5EE] text-[#4b3c32] text-xs font-medium pl-10 pr-10 py-2.5 rounded-full border border-[#E8DECة border-[#decbba]] focus:outline-none focus:border-candy focus:ring-2 focus:ring-candy-soft transition-all shadow-warm-inner tracking-widest">
+            <button type="button" class="absolute right-3.5 text-[#a39082] hover:text-heather">
+              <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Primary Action Button: Solid Candy -->
+        <button id="btn-submit" type="submit" class="w-full mt-1 bg-candy hover:bg-candy-hover active:scale-[0.99] text-white py-3 rounded-full font-quicksand font-bold text-sm tracking-wide shadow-warm-btn flex items-center justify-center gap-2 transition-all duration-150">
+          <span class="">Continue</span>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+          </svg>
+        </button>
+      </form>
+
+      <!-- Soft Warm Divider -->
+      <div class="relative flex items-center justify-center my-1 mb-3">
+        <div class="border-t border-[#ebd8c5] w-full"></div>
+        <span class="bg-ivory px-3 text-[10px] font-semibold text-[#9e8c80] uppercase tracking-wider">or continue with</span>
+      </div>
+
+      <!-- Secondary Button: Continue with Google -->
+      <button type="button" class="w-full bg-[#FAF5EE] hover:bg-[#F3ECE0] active:scale-[0.99] text-[#4b3c32] py-2.5 px-4 rounded-full font-quicksand font-bold text-xs border border-[#decbba] flex items-center justify-center gap-2.5 transition-colors duration-150 shadow-sm">
+        <!-- Google Logo SVG -->
+        <svg class="w-4 h-4" viewBox="0 0 24 24">
+          <path fill="#4285F4" d="M23.745 12.27c0-.7-.06-1.4-.19-2.07H12v4.51h6.6c-.29 1.52-1.14 2.82-2.4 3.68v3.05h3.88c2.27-2.09 3.66-5.17 3.66-9.17z"></path>
+          <path fill="#34A853" d="M12 24c3.24 0 5.95-1.08 7.93-2.91l-3.88-3.05c-1.08.72-2.45 1.16-4.05 1.16-3.12 0-5.77-2.1-6.72-4.93H1.25v3.15C3.26 21.36 7.33 24 12 24z"></path>
+          <path fill="#FBBC05" d="M5.28 14.27c-.25-.72-.38-1.49-.38-2.27s.13-1.55.38-2.27V6.58H1.25C.45 8.16 0 9.94 0 12s.45 3.84 1.25 5.42l4.03-3.15z"></path>
+          <path fill="#EA4335" d="M12 4.75c1.77 0 3.35.61 4.6 1.8l3.42-3.42C17.95 1.19 15.24 0 12 0 7.33 0 3.26 2.64 1.25 6.58l4.03 3.15c.95-2.83 3.6-4.98 6.72-4.98z"></path>
+        </svg>
+        <span class="">Continue with Google</span>
+      </button>
+
+      <!-- Terms & Peace-of-Mind Microcopy -->
+      <p class="text-center text-[10px] text-[#9e8c80] mt-3 font-medium">
+        By joining, you embrace our gentle 
+        <a href="#" class="text-heather font-bold hover:underline">Care Policy</a> &amp; 
+        <a href="#" class="text-heather font-bold hover:underline">Privacy Nook</a>.
+      </p>
+
+      <!-- iOS Home Indicator Pill -->
+      <div class="w-32 h-1 bg-[#decbba] rounded-full mx-auto mt-2"></div>
+    </section>
+
+  </main>
+
+  <script>
+    function toggleTab(mode) {
+      const loginBtn = document.getElementById('tab-login');
+      const signupBtn = document.getElementById('tab-signup');
+      const submitBtn = document.getElementById('btn-submit');
+
+      if (mode === 'signup') {
+        loginBtn.className = "flex-1 py-2 rounded-full text-center text-xs font-bold font-quicksand transition-all duration-200 text-warmgray hover:text-heather-dark";
+        loginBtn.setAttribute('aria-selected', 'false');
+
+        signupBtn.className = "flex-1 py-2 rounded-full text-center text-xs font-bold font-quicksand transition-all duration-200 bg-ivory text-heather-dark shadow-sm";
+        signupBtn.setAttribute('aria-selected', 'true');
+
+        submitBtn.innerHTML = `<span>Create Gentle Account</span>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>`;
+      } else {
+        signupBtn.className = "flex-1 py-2 rounded-full text-center text-xs font-bold font-quicksand transition-all duration-200 text-warmgray hover:text-heather-dark";
+        signupBtn.setAttribute('aria-selected', 'false');
+
+        loginBtn.className = "flex-1 py-2 rounded-full text-center text-xs font-bold font-quicksand transition-all duration-200 bg-ivory text-heather-dark shadow-sm";
+        loginBtn.setAttribute('aria-selected', 'true');
+
+        submitBtn.innerHTML = `<span>Continue</span>
+          <svg class="w-4 h-4 fill-current" viewBox="0 0 20 20">
+            <path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"/>
+          </svg>`;
+      }
+    }
+  </script>
+
+
+
+
+</body></html>

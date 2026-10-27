@@ -1,0 +1,6 @@
+{
+  "name": "MoodSync",
+  "description": "A mindful, mood-aware task scheduler that harmonizes your daily rhythm with your energy and feelings.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

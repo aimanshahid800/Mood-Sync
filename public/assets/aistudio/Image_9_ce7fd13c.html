@@ -1,0 +1,276 @@
+<!DOCTYPE html><html lang="en" style=""><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MoodSync - Notifications (Heather)</title>
+  <!-- Google Fonts: Quicksand -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500;600;700&amp;display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            heather: '#877499',
+            'heather-dark': '#746187',
+            candy: '#E78299',
+            sandstone: '#E6D4BF',
+            'sandstone-light': '#F5EBE1',
+            viridian: '#679F9F',
+            azur: '#7D97C9',
+            cream: '#FFFDF9',
+            'cream-muted': '#F7F2EC',
+            charcoal: '#2D2833',
+            'charcoal-muted': '#7D7585',
+          },
+          fontFamily: {
+            sans: ['Quicksand', 'sans-serif'],
+          },
+          boxShadow: {
+            'cozy-sm': '0 4px 14px rgba(60, 40, 80, 0.08)',
+            'cozy-md': '0 8px 24px rgba(60, 40, 80, 0.12)',
+            'cozy-float': '0 12px 32px rgba(60, 40, 80, 0.18)',
+            'cozy-badge': '0 4px 12px rgba(231, 130, 153, 0.35)',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body {
+      font-family: 'Quicksand', sans-serif;
+      -webkit-tap-highlight-color: transparent;
+      user-select: none;
+    }
+    /* Hide scrollbar for cozy aesthetics */
+    ::-webkit-scrollbar {
+      display: none;
+    }
+    * {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+  </style>
+</head>
+<body class="bg-heather text-charcoal min-h-screen flex justify-center items-center overflow-x-hidden antialiased selection:bg-candy selection:text-white">
+
+  <!-- Mobile Viewport Container (390px x 844px) -->
+  <div class="relative w-[390px] h-[844px] bg-[#877499] overflow-hidden flex flex-col justify-between shadow-2xl rounded-[44px] border-[6px] border-[#776389]">
+    
+    <!-- Subtle Warm Ambient Shapes for Depth (Zero blur, pure soft opacity solid shapes) -->
+    <div class="absolute -top-16 -right-16 w-64 h-64 rounded-full bg-white/5 pointer-events-none"></div>
+    <div class="absolute top-1/3 -left-20 w-56 h-56 rounded-full bg-sandstone/10 pointer-events-none"></div>
+    <div class="absolute bottom-28 -right-12 w-48 h-48 rounded-full bg-candy/10 pointer-events-none"></div>
+
+    <!-- Status Bar (iOS Native Style) -->
+    <div class="relative z-20 pt-3 px-7 flex justify-between items-center text-white/90 text-sm font-semibold tracking-tight">
+      <span class="">9:41</span>
+      <div class="flex items-center space-x-2">
+        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24">
+          <path d="M12 3c-4.97 0-9 4.03-9 9 0 2.12.74 4.07 1.97 5.61L4.35 19.4c-.39.39-.39 1.02 0 1.41.39.39 1.02.39 1.41 0l1.9-1.9C9.28 19.64 10.58 20 12 20c4.97 0 9-4.03 9-9s-4.03-9-9-9z"></path>
+        </svg>
+        <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+          <path d="M12 4C7.31 4 3.07 5.9 0 8.98L12 21 24 8.98A16.88 16.88 0 0 0 12 4z"></path>
+        </svg>
+        <!-- Battery Icon -->
+        <div class="w-6 h-3 border-2 border-white/90 rounded-[4px] p-[1px] flex items-center">
+          <div class="h-full w-4 bg-white/90 rounded-[1.5px]"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header Section -->
+    <header class="relative z-10 px-6 pt-3 pb-2 flex items-center justify-between">
+      <button class="w-11 h-11 rounded-2xl bg-white/15 active:bg-white/25 flex items-center justify-center text-white transition-all">
+        <svg class="w-5 h-5 stroke-[2.5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+
+      <h1 class="text-2xl font-bold text-white tracking-wide">Notifications</h1>
+
+      <!-- Mark as Read / Filter Action Button -->
+      <button class="w-11 h-11 rounded-2xl bg-white/15 active:bg-white/25 flex items-center justify-center text-white transition-all">
+        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="2"></circle>
+          <circle cx="19" cy="12" r="2"></circle>
+          <circle cx="5" cy="12" r="2"></circle>
+        </svg>
+      </button>
+    </header>
+
+    <!-- Filter Pills / Categories Row -->
+    <div class="relative z-10 px-6 py-1 flex items-center gap-2 overflow-x-auto">
+      <button class="px-4 py-1.5 rounded-full bg-cream text-charcoal text-xs font-bold shadow-cozy-sm flex items-center gap-1.5 active:scale-95 transition-all">
+        <span class="w-2 h-2 rounded-full bg-candy"></span>
+        All (4)
+      </button>
+      <button class="px-3.5 py-1.5 rounded-full bg-white/15 text-white/90 text-xs font-semibold hover:bg-white/20 active:scale-95 transition-all">
+        Reminders
+      </button>
+      <button class="px-3.5 py-1.5 rounded-full bg-white/15 text-white/90 text-xs font-semibold hover:bg-white/20 active:scale-95 transition-all">
+        Mindful AI
+      </button>
+      <button class="px-3.5 py-1.5 rounded-full bg-white/15 text-white/90 text-xs font-semibold hover:bg-white/20 active:scale-95 transition-all">
+        Moments
+      </button>
+    </div>
+
+    <!-- Scrollable Notification List Container -->
+    <main class="relative z-10 flex-1 px-5 pt-3 pb-24 overflow-y-auto space-y-3">
+      
+      <!-- Section Label: Today -->
+      <div class="flex items-center justify-between px-1 pt-1 pb-0.5">
+        <span class="text-xs font-bold text-white/80 uppercase tracking-wider">Today</span>
+        <span class="text-[11px] font-semibold text-white/60">3 unread</span>
+      </div>
+
+      <!-- Card 1: AI Suggestion (Viridian Sparkle Badge) -->
+      <div class="bg-cream rounded-[24px] p-4 shadow-cozy-md flex items-start gap-3.5 border-2 border-cream active:scale-[0.99] transition-transform">
+        <div class="w-11 h-11 rounded-2xl bg-viridian text-white flex-shrink-0 flex items-center justify-center shadow-sm">
+          <!-- Sparkle SVG -->
+          <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24">
+            <path d="M12 2L14.2 8.3L20.5 10.5L14.2 12.7L12 19L9.8 12.7L3.5 10.5L9.8 8.3L12 2Z"></path>
+            <path d="M19 16L19.8 18.2L22 19L19.8 19.8L19 22L18.2 19.8L16 19L18.2 18.2L19 16Z" opacity="0.8"></path>
+          </svg>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center justify-between gap-1">
+            <h2 class="text-sm font-bold text-charcoal leading-snug">Energy Peak Ahead</h2>
+            <span class="text-[11px] font-semibold text-charcoal-muted whitespace-nowrap">10m ago</span>
+          </div>
+          <p class="text-xs text-charcoal/80 mt-1 leading-relaxed font-medium">
+            Your afternoon mood is calm &amp; focused. Perfect window for <span class="font-bold text-viridian">Gentle Mindful Yoga</span>.
+          </p>
+          <div class="mt-2.5 flex gap-2">
+            <button class="px-3 py-1 bg-viridian/15 text-viridian hover:bg-viridian/25 text-[11px] font-bold rounded-full transition-colors">
+              Schedule Now
+            </button>
+            <button class="px-3 py-1 bg-cream-muted text-charcoal-muted text-[11px] font-bold rounded-full">
+              Later
+            </button>
+          </div>
+        </div>
+        <span class="w-2 h-2 rounded-full bg-candy mt-1.5 flex-shrink-0"></span>
+      </div>
+
+      <!-- Card 2: Ramadan / Prayer Alert (Sandstone Moon Badge) -->
+      <div class="bg-cream rounded-[24px] p-4 shadow-cozy-md flex items-start gap-3.5 border-2 border-cream active:scale-[0.99] transition-transform">
+        <div class="w-11 h-11 rounded-2xl bg-sandstone text-[#705436] flex-shrink-0 flex items-center justify-center shadow-sm">
+          <!-- Moon SVG -->
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12.3 2a10 10 0 0 0-.19 1.4 10 10 0 0 0 10 10c.48 0 .95-.07 1.4-.19A10.01 10.01 0 0 1 12 22a10 10 0 0 1-10-10A10 10 0 0 1 12.3 2z"></path>
+          </svg>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center justify-between gap-1">
+            <h2 class="text-sm font-bold text-charcoal leading-snug">Asr Prayer &amp; Reflection</h2>
+            <span class="text-[11px] font-semibold text-charcoal-muted whitespace-nowrap">45m ago</span>
+          </div>
+          <p class="text-xs text-charcoal/80 mt-1 leading-relaxed font-medium">
+            Time for Asr tranquility. Take 5 mindful breaths and pause your tasks for peaceful dhikr.
+          </p>
+        </div>
+        <span class="w-2 h-2 rounded-full bg-candy mt-1.5 flex-shrink-0"></span>
+      </div>
+
+      <!-- Card 3: Reminder Notification (Solid Candy Bell Badge) -->
+      <div class="bg-cream rounded-[24px] p-4 shadow-cozy-md flex items-start gap-3.5 border-2 border-cream active:scale-[0.99] transition-transform">
+        <div class="w-11 h-11 rounded-2xl bg-candy text-white flex-shrink-0 flex items-center justify-center shadow-sm">
+          <!-- Bell SVG -->
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2zm-2 1H8v-6c0-2.48 1.51-4.5 4-4.5s4 2.02 4 4.5v6z"></path>
+          </svg>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center justify-between gap-1">
+            <h2 class="text-sm font-bold text-charcoal leading-snug">Hydration &amp; Tea Break</h2>
+            <span class="text-[11px] font-semibold text-charcoal-muted whitespace-nowrap">2h ago</span>
+          </div>
+          <p class="text-xs text-charcoal/80 mt-1 leading-relaxed font-medium">
+            Remember to drink warm chamomile tea and stretch your shoulders gently.
+          </p>
+        </div>
+        <span class="w-2 h-2 rounded-full bg-candy mt-1.5 flex-shrink-0"></span>
+      </div>
+
+      <!-- Section Label: Yesterday -->
+      <div class="flex items-center justify-between px-1 pt-2 pb-0.5">
+        <span class="text-xs font-bold text-white/80 uppercase tracking-wider">Yesterday</span>
+        <span class="text-[11px] font-semibold text-white/60">Completed</span>
+      </div>
+
+      <!-- Card 4: Daily Reflection Completed (Azur Heart/Companion Badge) -->
+      <div class="bg-cream/90 rounded-[24px] p-4 shadow-cozy-sm flex items-start gap-3.5 border border-white/20 active:scale-[0.99] transition-transform">
+        <div class="w-11 h-11 rounded-2xl bg-azur text-white flex-shrink-0 flex items-center justify-center shadow-sm">
+          <!-- Heart / Sync Icon -->
+          <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+            <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+          </svg>
+        </div>
+        <div class="flex-1 min-w-0">
+          <div class="flex items-center justify-between gap-1">
+            <h2 class="text-sm font-bold text-charcoal leading-snug">Weekly Harmony Summary</h2>
+            <span class="text-[11px] font-semibold text-charcoal-muted whitespace-nowrap">Yesterday</span>
+          </div>
+          <p class="text-xs text-charcoal/70 mt-1 leading-relaxed font-medium">
+            You completed 92% of your calm focus goals. Sync Buddy is cheering for you!
+          </p>
+        </div>
+      </div>
+
+    </main>
+
+    <!-- Floating Bottom Navigation Bar (Solid Cream Pill) -->
+    <!-- Notifications tab active with raised circular badge in Candy -->
+    <div class="absolute bottom-5 inset-x-5 z-30">
+      <nav class="relative bg-cream rounded-full px-4 shadow-cozy-float flex items-center justify-around py-1"><!-- Tab 1: Home -->
+<button class="flex flex-col items-center justify-center w-11 py-0.5 text-charcoal-muted hover:text-charcoal transition-colors">
+  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+    <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"></path>
+  </svg>
+  <span class="text-[10px] font-bold mt-0.5">Home</span>
+</button>
+
+<!-- Tab 2: Chat -->
+<button class="flex flex-col items-center justify-center w-11 py-0.5 text-charcoal-muted hover:text-charcoal transition-colors">
+  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"></path></svg>
+  <span class="text-[10px] font-bold mt-0.5">Chat</span>
+</button>
+
+<!-- Tab 3: Add -->
+<button class="flex flex-col items-center justify-center w-11 py-0.5 text-charcoal-muted hover:text-charcoal transition-colors">
+  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+    <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"></path>
+  </svg>
+  <span class="text-[10px] font-bold mt-0.5">Add</span>
+</button>
+
+<!-- Tab 4: Alerts (ACTIVE - Raised Circular Badge in Heather #877499) -->
+<div class="relative -top-4 flex flex-col items-center">
+  <button class="w-12 h-12 rounded-full bg-[#877499] text-white flex items-center justify-center shadow-cozy-md active:scale-95 transition-transform">
+    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+      <path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6v-5c0-3.07-1.63-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.64 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z"></path>
+    </svg>
+  </button>
+  <span class="text-[10px] font-bold text-[#877499] mt-0.5">Alerts</span>
+</div>
+
+<!-- Tab 5: Me -->
+<button class="flex flex-col items-center justify-center w-11 py-0.5 text-charcoal-muted hover:text-charcoal transition-colors">
+  <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"></path>
+  </svg>
+  <span class="text-[10px] font-bold mt-0.5">Me</span>
+</button></nav>
+    </div>
+
+  </div>
+
+
+
+
+
+</body></html>

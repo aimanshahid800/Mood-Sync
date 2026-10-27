@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-heather: #877499;
+    --color-heather-dark: #665578;
+    --color-viridian: #679F9F;
+    --color-candy: #E78299;
+    --color-azur: #7D97C9;
+    --color-sandstone: #E6D4BF;
+    --color-cream: #FFFDF9;
+    --color-charcoal: #2D2833;
+    --color-warmgray: #71626A;
+  }
+
+  body {
+    font-family: 'Quicksand', 'Nunito', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: #2D2833;
+    background-color: #F8F3ED;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* Hide scrollbar for cozy aesthetics */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  * {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+.shadow-cozy {
+  box-shadow: 0 10px 25px -4px rgba(135, 116, 153, 0.22), 0 6px 14px -3px rgba(231, 130, 153, 0.18);
+}
+
+.shadow-cozy-card {
+  box-shadow: 0 8px 24px rgba(45, 40, 51, 0.08);
+}
+
+.shadow-cozy-lg {
+  box-shadow: 0 14px 34px -4px rgba(90, 52, 65, 0.22);
+}
+
+.shadow-raised {
+  box-shadow: 0 10px 20px -3px rgba(135, 116, 153, 0.45);
+}
+
+.shadow-nav {
+  box-shadow: 0 14px 34px -4px rgba(90, 52, 65, 0.22);
+}
+
+.shadow-cozy-selected {
+  box-shadow: 0 8px 24px rgba(180, 50, 85, 0.35);
+}
+
+/* Custom range slider styling */
+input[type=range] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 18px;
+  cursor: pointer;
+  background: #F3DEE3;
+  border-radius: 9999px;
+  border: 3px solid #FFF8F2;
+}
+input[type=range]::-webkit-slider-thumb {
+  height: 36px;
+  width: 36px;
+  border-radius: 50%;
+  background: #877499;
+  border: 4px solid #FFF8F2;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -11px;
+  box-shadow: 0 4px 12px rgba(90, 50, 110, 0.32);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+input[type=range]::-webkit-slider-thumb:active {
+  transform: scale(1.15);
+  background: #665578;
+}

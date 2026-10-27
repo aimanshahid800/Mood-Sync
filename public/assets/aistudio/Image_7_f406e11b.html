@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MoodSync - Splash Welcome</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Quicksand', 'Nunito', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      margin: 0;
+      padding: 0;
+      background-color: #726084;
+    }
+    @keyframes subtleFloat {
+      0%, 100% {
+        transform: translateY(0px) scale(1);
+      }
+      50% {
+        transform: translateY(-6px) scale(1.01);
+      }
+    }
+    @keyframes pulseGlow {
+      0%, 100% {
+        opacity: 0.8;
+      }
+      50% {
+        opacity: 1;
+      }
+    }
+    @keyframes loadingSlide {
+      0% {
+        transform: translateX(-100%);
+      }
+      50% {
+        transform: translateX(10%);
+      }
+      100% {
+        transform: translateX(200%);
+      }
+    }
+    .animate-float {
+      animation: subtleFloat 4s ease-in-out infinite;
+    }
+    .animate-pulse-slow {
+      animation: pulseGlow 3s ease-in-out infinite;
+    }
+    .animate-loading {
+      animation: loadingSlide 2.4s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+    }
+    .tactile-shadow {
+      box-shadow: 0 16px 36px -8px rgba(45, 28, 62, 0.45), 0 6px 16px -4px rgba(45, 28, 62, 0.25);
+    }
+  </style>
+</head>
+<body class="flex items-center justify-center min-h-screen p-0 sm:p-4 selection:bg-rose-200">
+
+  <!-- Mobile Container (390x844 iPhone-style viewport) -->
+  <div class="relative w-[390px] h-[844px] overflow-hidden rounded-[44px] shadow-2xl flex flex-col justify-between"
+       style="background: linear-gradient(175deg, #917da5 0%, #877499 35%, #766388 70%, #68547a 100%);">
+
+    <!-- Decorative Background Accents: Dreamy soft translucent circles & colored dots (Viridian, Candy, Cream) -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <!-- Large soft translucent circles -->
+      <div class="absolute -top-16 -right-16 w-72 h-72 rounded-full bg-white/[0.07]"></div>
+      <div class="absolute top-1/4 -left-20 w-80 h-80 rounded-full bg-white/[0.05]"></div>
+      <div class="absolute bottom-28 -right-14 w-64 h-64 rounded-full bg-white/[0.06]"></div>
+      <div class="absolute -bottom-20 -left-16 w-72 h-72 rounded-full bg-white/[0.08]"></div>
+
+      <!-- Accent colored decorative dots (Candy pink #E78299, Viridian teal #679F9F, Cream #FFF3E5) -->
+      <!-- Top section dots -->
+      <div class="absolute top-20 left-12 w-2.5 h-2.5 rounded-full bg-[#E78299] opacity-80 shadow-sm"></div>
+      <div class="absolute top-28 right-16 w-3.5 h-3.5 rounded-full bg-[#679F9F] opacity-75"></div>
+      <div class="absolute top-44 left-24 w-2 h-2 rounded-full bg-[#FFF3E5] opacity-90"></div>
+
+      <!-- Mid section dots around the logo -->
+      <div class="absolute top-64 right-10 w-2.5 h-2.5 rounded-full bg-[#FFF3E5] opacity-80"></div>
+      <div class="absolute top-80 left-10 w-3 h-3 rounded-full bg-[#679F9F] opacity-70"></div>
+      <div class="absolute top-[420px] right-14 w-2 h-2 rounded-full bg-[#E78299] opacity-85"></div>
+      <div class="absolute top-[460px] left-16 w-3 h-3 rounded-full bg-[#FFF3E5] opacity-65"></div>
+
+      <!-- Lower section dots -->
+      <div class="absolute bottom-48 right-12 w-3.5 h-3.5 rounded-full bg-[#679F9F] opacity-80"></div>
+      <div class="absolute bottom-36 left-20 w-2.5 h-2.5 rounded-full bg-[#E78299] opacity-75"></div>
+      <div class="absolute bottom-24 right-24 w-2 h-2 rounded-full bg-[#FFF3E5] opacity-90"></div>
+    </div>
+
+    <!-- Status Bar (iOS standard) -->
+    <div class="relative z-20 flex justify-between items-center px-8 pt-4 pb-2 text-white text-xs font-semibold select-none">
+      <span class="tracking-wide text-[14px]">9:41</span>
+      <div class="flex items-center space-x-2">
+        <!-- Cellular -->
+        <svg class="w-4 h-3.5 fill-current opacity-90" viewBox="0 0 17 12">
+          <rect x="0" y="8" width="3" height="4" rx="0.5"/>
+          <rect x="4.5" y="5.5" width="3" height="6.5" rx="0.5"/>
+          <rect x="9" y="3" width="3" height="9" rx="0.5"/>
+          <rect x="13.5" y="0.5" width="3" height="11.5" rx="0.5"/>
+        </svg>
+        <!-- Wifi -->
+        <svg class="w-4 h-3.5 fill-current opacity-90" viewBox="0 0 16 12">
+          <path d="M8 2.8C5.2 2.8 2.6 3.9 0.7 5.7L0 5C2.1 3 5 1.7 8 1.7s5.9 1.3 8 3.3l-0.7 0.7C13.4 3.9 10.8 2.8 8 2.8z"/>
+          <path d="M8 5.6C6.1 5.6 4.3 6.4 2.9 7.7L2.2 7C3.8 5.4 5.8 4.5 8 4.5s4.2 0.9 5.8 2.5l-0.7 0.7C11.7 6.4 9.9 5.6 8 5.6z"/>
+          <path d="M8 8.4c-1.1 0-2.1 0.4-2.8 1.2L4.5 8.9C5.4 7.9 6.7 7.3 8 7.3s2.6 0.6 3.5 1.6l-0.7 0.7C10.1 8.8 9.1 8.4 8 8.4z"/>
+          <circle cx="8" cy="11" r="1.1"/>
+        </svg>
+        <!-- Battery -->
+        <div class="w-6 h-3 rounded-[4px] border border-white/80 p-0.5 flex items-center">
+          <div class="h-full w-4/5 bg-white rounded-[2px]"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Center Content: Logo, Brand Name, Tagline, and Status Pill -->
+    <div class="relative z-20 flex flex-col items-center justify-center flex-1 -mt-4 px-6 text-center">
+      
+      <!-- App Icon Card with warm cream border & soft tactile shadow -->
+      <div class="animate-float mb-6">
+        <div class="p-2 rounded-[34px] bg-[#FFF8F0] shadow-2xl transition-transform duration-300">
+          <div class="w-32 h-32 rounded-[28px] overflow-hidden tactile-shadow bg-[#877499]">
+            <img src="https://lh3.googleusercontent.com/aida/AEtjO1UyPza0FhFa49U-RcaRUzTN-UGkZc6kLxnO9Aba5NHU_IIyz5-uPiTANMAMxB28aUivMd62BRsSZwMIrTDnU2iyr9fqy38Y56EwRc9uHI8JvVM4laMchQ6RjDqhymYhmcJGarepRO1gUIQVxLqYswkA2AnO34XlTqsPHdKtv0V2BBLaSt2K3WetZ1kS-wodif-_YcTo3YgpKqDlQpTr3GqulDsE_GRsDNHnRCYSqdcq_4BORd1-g3YaF68" 
+                 alt="MoodSync App Icon" 
+                 class="w-full h-full object-cover select-none pointer-events-none" />
+          </div>
+        </div>
+      </div>
+
+      <!-- App Name: Quicksand bold, white text, friendly rounded style -->
+      <h1 class="text-[38px] font-bold tracking-tight text-white leading-tight drop-shadow-sm font-['Quicksand'] mb-2">
+        MoodSync
+      </h1>
+
+      <!-- Tagline: smaller white/light text -->
+      <p class="text-[17px] font-medium text-white/90 tracking-normal max-w-[260px] leading-relaxed mb-6 font-['Nunito']">
+        Your day, tuned to your mood.
+      </p>
+
+      <!-- Pill-shaped status/progress indicator: dark translucent background with Viridian green dot -->
+      <div class="inline-flex items-center space-x-2.5 px-4 py-2 rounded-full bg-black/25 backdrop-blur-none border border-white/10 shadow-inner">
+        <span class="w-2.5 h-2.5 rounded-full bg-[#679F9F] animate-pulse-slow shadow-[0_0_8px_#679F9F]"></span>
+        <span class="text-[13px] font-semibold text-white/90 tracking-wide">
+          Syncing mindful rhythm...
+        </span>
+      </div>
+
+    </div>
+
+    <!-- Bottom Section: Tracking text & loading bar indicator -->
+    <div class="relative z-20 flex flex-col items-center pb-10 px-10 text-center select-none">
+      
+      <!-- Uppercase tracking text -->
+      <div class="text-[11px] font-bold tracking-[0.24em] text-white/70 uppercase mb-3 font-['Nunito']">
+        DESIGNED FOR MINDFUL LIVING
+      </div>
+
+      <!-- Thin rounded progress / loading bar beneath it -->
+      <div class="w-36 h-1.5 rounded-full bg-white/20 overflow-hidden relative shadow-inner">
+        <div class="h-full w-14 rounded-full bg-[#E6D4BF] animate-loading shadow-[0_0_10px_rgba(230,212,191,0.7)]"></div>
+      </div>
+
+      <!-- iOS home indicator bar -->
+      <div class="w-32 h-1 bg-white/40 rounded-full mt-7"></div>
+    </div>
+
+  </div>
+
+</body>
+</html>
